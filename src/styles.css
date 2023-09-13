@@ -1,0 +1,222 @@
+* {
+  /* font-family: "Lugrasimo", cursive; */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.homepage {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  min-height: 100vh;
+  /* height: auto; */
+  overflow-y: auto;
+}
+
+/* header css */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  background-color: white;
+  height: 60px;
+  box-shadow: 0px 5px 6px rgba(0, 0, 0, 0.2);
+  z-index: 200;
+}
+nav {
+  padding: 0 20px;
+  margin: auto;
+}
+nav ul {
+  display: flex;
+  list-style-type: none;
+  /* text-align: right;
+  justify-content: space-between;
+  align-items: center; */
+  transition: opacity 1s ease-in-out;
+  gap: 80px;
+}
+
+nav ul li a {
+  color: black;
+  font-weight: bold;
+  text-decoration: none;
+}
+nav ul li {
+  transition: 0.2s ease-in-out;
+}
+nav ul li:hover {
+  transform: scale(1.2);
+}
+nav ul li :hover {
+  color: black;
+}
+
+/* .search-icon {
+  cursor: pointer;
+  color: #000;
+}
+.fas fa-search {
+  color: #000;
+} */
+/* 
+.search-field {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  padding: 10px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  display: flex;
+  align-items: center;
+}
+.search-field input[type="text"] {
+  width: 200px;
+  padding: 5px;
+  border: none;
+  outline: none;
+} */
+
+/* welcome css */
+.welcome {
+  width: 65%;
+  height: 350px;
+  margin: 130px auto 40px;
+  display: flex;
+  gap: 10%;
+  align-items: center;
+  animation: slideIn 1.5s backwards;
+}
+/* styles.css */
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes rotateAnimation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.welcomeImg img {
+  border-radius: 50%;
+  width: 100%;
+  /* height: 100%; */
+  object-fit: cover;
+}
+
+.welcometxt {
+  font-family: "Lugrasimo", cursive;
+  font-weight: bolder;
+  font-size: 15px;
+  width: 50%;
+  float: right;
+  /* margin-top: 120px; */
+  color: black;
+  margin: auto;
+  animation: rotateAnimation 1.5s linear;
+}
+
+/* product */
+@keyframes slideup {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+.products {
+  width: 80%;
+  margin: auto;
+  animation: slideup 1s forwards;
+}
+
+.products h1 {
+  font-family: "Lugrasimo", cursive;
+  font-size: 20px;
+  margin: 20px;
+  text-align: center;
+}
+.productCont {
+  gap: 20px;
+  display: flex;
+  justify-content: center;
+}
+.product-container {
+  width: 33.3%;
+  /* height: 200px; */
+}
+.product-image {
+  height: 50%;
+  overflow: hidden;
+  padding-bottom: 100%;
+  position: relative;
+}
+.product-image img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.3s ease, filter 0.5s ease;
+  filter: brightness(100%);
+}
+
+.product-image:hover img {
+  transform: scale(1.1);
+  filter: brightness(60%);
+}
+.buybtn {
+  position: absolute;
+  bottom: 45%;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: transform 0.5s ease, opacity 1s ease;
+  white-space: nowrap;
+  border: 0;
+  box-shadow: 3px 3px 3px black;
+  filter: brightness(90%);
+}
+.buybtn:hover {
+  filter: brightness(100%);
+  cursor: pointer;
+}
+.product-image:hover .buybtn {
+  transform: translateX(-50%) scale(1.5);
+  opacity: 1;
+  background-color: rgb(141, 109, 109);
+  color: white;
+  /* z-index: 10; */
+}
+
+.product-details {
+  text-align: center;
+}
+.footer {
+  background-color: rgb(221, 220, 220);
+  color: black;
+  height: 180px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
