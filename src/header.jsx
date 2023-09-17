@@ -2,20 +2,23 @@ import React, { useState } from "react";
 import "./styles.css";
 
 export default function Header() {
-  const [isSearchVisible, setSearchVisible] = useState(false);
+  const [isSearchHovered, setSearchHovered] = useState(false);
 
   const handleSearchIconHover = () => {
-    setSearchVisible(true);
+    setSearchHovered(true);
   };
 
   const handleSearchIconLeave = () => {
-    setSearchVisible(false);
+    setSearchHovered(false);
   };
   return (
-    <div>
-      <div className="header">
+    <div className="header">
+      <div className="logo">
+
+      </div>
+      <div className="nav-links">
         <nav>
-          <ul className="nav-links">
+          <ul >
             <li>
               <a href=" ">Home</a>
             </li>
@@ -25,21 +28,21 @@ export default function Header() {
             <li>
               <a href=" ">About us</a>
             </li>
-            <li
-              className="search-icon"
-              onMouseEnter={handleSearchIconHover}
-              onMouseLeave={handleSearchIconLeave}
-            >
-              <i className="fas fa-search"></i>
-              {isSearchVisible && (
-                <div className="search-field">
-                  <input type="text" placeholder="Search..." />
-                </div>
-              )}
-            </li>
           </ul>
         </nav>
       </div>
+
+      <div className="search-field">
+        <input
+          type="text"
+          placeholder="Search..."
+          className={`input ${isSearchHovered ? "show" : ""}`}
+        />
+        <i className="fas fa-search"
+          onMouseEnter={handleSearchIconHover}
+          onMouseLeave={handleSearchIconLeave}></i>
+      </div>
+
     </div>
   );
 }
